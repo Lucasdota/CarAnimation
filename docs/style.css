@@ -9,16 +9,17 @@
 body{
     width:100vw;
     height:100vh;
+    overflow: hidden;
 } 
 
 
 /*main background animation and div*/
-@keyframes backgroundScroll {
+@keyframes main-background {
 from {background-position: 0 0;}
 to {background-position: -180px 0px;}
 }
 /*In order to support animation in different browsers you must mention vender prefix of that browser with keyframe*/
-@-webkit-keyframes backgroundScroll {
+@-webkit-keyframes main-background {
 from {background-position: 0 0;}
 to {background-position: -180px 0px;}
 }
@@ -31,9 +32,9 @@ to {background-position: -180px 0px;}
     height:100%;
     display: flex;
     align-items: flex-end;
-    -webkit-animation: backgroundScroll 30s linear infinite alternate;
+    -webkit-animation: main-background 15s linear infinite alternate;
     -webkit-animation-fill-mode: forwards;
-    animation: backgroundScroll 20s linear infinite alternate;
+    animation: main-background 15s linear infinite alternate;
     animation-fill-mode: forwards;
 }
 /*end of main background section*/
@@ -110,8 +111,8 @@ to {background-position: -180px 0px;}
     z-index:999;
     animation: car 1s linear infinite;
     -webkit-animation: car 1s linear infinite;
-    animation: car-movement 1s linear infinite alternate;
-    -webkit-animation: car-movement 1s linear infinite alternate;
+    animation: car-movement 10s linear infinite alternate;
+    -webkit-animation: car-movement 10s linear infinite alternate;
 }
 /*end of car section*/
 
@@ -187,6 +188,41 @@ to {background-position: -180px 0px;}
 /*end of yellow stripes on the road section*/
 
 
+
+/*floor section*/
+@keyframes rocks{
+    0%{
+        background-position: 0px 0px;
+    }
+    100%{
+        background-position: -1920px 0px;
+    }
+}
+.floor{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.rocks{
+    width:100%;
+    height:5%;
+    margin-top:-90px;
+    background: repeating-linear-gradient(90deg, #404F54 30px, #404F54 50px, #384B4F 50px, #384B4F 70px, #404F54 70px, #404F54 90px,
+    #384B4F 90px, #384B4F 600px);
+    animation:rocks 1s linear infinite;
+}
+.rocks2{
+    width:100%;
+    height:5%;
+    margin-top:40px;
+    background: repeating-linear-gradient(90deg, #404F54 30px, #404F54 50px, #384B4F 50px, #384B4F 500px);
+    animation:rocks 1s linear infinite;
+    transform: rotate(-0.6deg);
+}
+/*end of floor section*/
 
 
 
